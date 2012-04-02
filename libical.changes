@@ -1,0 +1,41 @@
+* Mon Apr 02 2012 Marko Saukko <sage@merproject.org> - 0.48
+- Part of MER#14: QtOrganizer missing
+- Update to version 0.48.
+- Dropped upstreamed patches: 
+  - fix_mem_leaks.patch
+  - do_not_escape_comma_list_delim.patch
+  - fix_timezone_race.patch
+
+* Tue Nov 30 2010 Kaitlin Ruper <kaitlin.rupert@intel.com> - 0.46
+- BMC#6053 - Include necessary patches to resolve issues with comma delimiters,
+             fix a race condition regarding the builtin timezone components
+- Also include a fix for some memory leaks and a test regression
+
+* Mon Oct 25 2010 Kaitlin Ruper <kaitlin.rupert@intel.com> - 0.46
+- BMC#6053 - Update to libical 0.46
+- Remove 01_fix_headers.patch - fixes have been merged upstream
+
+* Mon Oct 18 2010 Austin Zhang <austin.zhang@intel.com> - 0.44
+- Disable parallel building which would fail in sometimes.
+
+* Fri Jul 23 2010 Fathi Boudra <fathi.boudra@nokia.com> - 0.44
+- Update to libical 0.44
+- Sanitize the spec file
+- Switch to cmake build system
+- Add 01_fix_headers.patch
+- Remove deprecated patches:
+  implicit-pointer-conversion.patch
+  makefile.patch
+  pkgconfig.patch
+- Improve description and summary
+- Fix license tag
+
+* Sat Feb 27 2010 Anas Nashif <anas.nashif@intel.com> - 0.43
+- Updated with latest spectacle
+- Include YAML file in source rpm
+
+* Tue Feb 16 2010 Anas Nashif <anas.nashif@intel.com> - 0.43
+- Use spectacle
+
+* Tue Mar 24 2009 Anas Nashif <anas.nashif@intel.com> 0.43
+- Initial import into Moblin

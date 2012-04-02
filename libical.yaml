@@ -1,0 +1,40 @@
+Name: libical
+Summary: iCalendar library implementation in C (runtime)
+Version: 0.48
+Release: 1
+Group: System/Libraries
+License: LGPLv2.1 or MPLv1.0
+URL: http://sourceforge.net/projects/freeassociation/
+Sources:
+    - http://downloads.sourceforge.net/freeassociation/%{name}-%{version}.tar.gz
+Patches:
+    - test_regression_fix.patch
+
+Description: |
+    libical is an open source implementation of the IETFs iCalendar calendaring
+    and scheduling protocols (RFC 2445, 2446, and 2447). It parses iCal 
+    components and provides a C API for manipulating the component properties, 
+    parameters, and subcomponents.
+
+    This package contains the files necessary for running applications that use
+    the libical library.
+
+Requires:
+    - tzdata
+PkgBR:
+    - tzdata
+Configure: configure
+Builder: make
+
+SubPackages:
+    - Name: devel
+      Summary: iCalendar library implementation in C (development)
+      Group: Development/Libraries
+      Description: |
+          libical is an open source implementation of the IETFs iCalendar 
+          calendaring and scheduling protocols (RFC 2445, 2446, and 2447). It 
+          parses iCal components and provides a C API for manipulating the 
+          component properties, parameters, and subcomponents.
+
+          This package contains the files necessary for developing applications
+          that use the libical library.
