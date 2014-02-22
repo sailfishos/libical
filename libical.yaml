@@ -9,6 +9,7 @@ Sources:
     - http://downloads.sourceforge.net/freeassociation/%{name}-%{version}.tar.gz
 Patches:
     - test_regression_fix.patch
+    - libical-aarch64.patch
 
 Description: |
     libical is an open source implementation of the IETFs iCalendar calendaring

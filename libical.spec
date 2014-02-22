@@ -15,6 +15,7 @@ URL:        http://sourceforge.net/projects/freeassociation/
 Source0:    http://downloads.sourceforge.net/freeassociation/%{name}-%{version}.tar.gz
 Source100:  libical.yaml
 Patch0:     test_regression_fix.patch
+Patch1:     libical-aarch64.patch
 Requires:   tzdata
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -53,6 +54,9 @@ that use the libical library.
 
 # test_regression_fix.patch
 %patch0 -p1
+
+# libical-aarch64.patch
+%patch1 -p1
 # >> setup
 # << setup
 

@@ -1,3 +1,6 @@
+* Fri Feb 21 2014 Oleg Girko <oleg.girko@jolla.com> - 0.48
+- Add aarch64 support
+
 * Mon Apr 02 2012 Marko Saukko <sage@merproject.org> - 0.48
 - Part of MER#14: QtOrganizer missing
 - Update to version 0.48.
