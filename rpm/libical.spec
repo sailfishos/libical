@@ -45,7 +45,7 @@ that use the libical library.
 %build
 pushd libical
 %cmake
-make %{?jobs:-j%jobs}
+make
 popd
 
 %install
