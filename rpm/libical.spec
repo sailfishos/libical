@@ -1,8 +1,7 @@
 Name:       libical
 Summary:    iCalendar library implementation in C (runtime)
-Version:    3.0.3
+Version:    3.0.7
 Release:    1
-Group:      System/Libraries
 License:    LGPLv2.1 or MPLv2.0
 URL:        http://libical.github.io/libical/
 Source0:    %{name}-%{version}.tar.gz
@@ -26,7 +25,6 @@ the libical library.
 
 %package devel
 Summary:    iCalendar library implementation in C (development)
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
@@ -56,19 +54,15 @@ Requires:	%{name}-glib = %{version}-%{release}
 Development files needed for building things which link against %{name}-glib.
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -n %{name}-%{version}/libical
 
 %build
-pushd libical
-%cmake
+%cmake -DENABLE_GTK_DOC=OFF
 make
-popd
 
 %install
 rm -rf %{buildroot}
-pushd libical
 make install DESTDIR=%{buildroot}
-popd
 
 # Remove unpackaged files - static libraries
 rm -f %{buildroot}%{_libdir}/libical*.a
