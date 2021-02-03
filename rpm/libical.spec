@@ -1,6 +1,6 @@
 Name:       libical
 Summary:    iCalendar library implementation in C (runtime)
-Version:    3.0.8
+Version:    3.0.9
 Release:    1
 License:    LGPLv2 or MPLv2.0
 URL:        https://libical.github.io/libical/
@@ -68,6 +68,10 @@ Development files needed for building things which link against %{name}-glib.
 
 %install
 %make_install
+
+# This is just a private build tool, not meant to be installed
+rm %{buildroot}%{_libexecdir}/libical/ical-glib-src-generator
+rm -rf %{buildroot}%{_datadir}/libical/zoneinfo
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
