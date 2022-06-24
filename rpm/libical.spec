@@ -3,7 +3,7 @@ Summary:    iCalendar library implementation in C (runtime)
 Version:    3.0.9
 Release:    1
 License:    LGPLv2 or MPLv2.0
-URL:        https://libical.github.io/libical/
+URL:        https://github.com/sailfishos/libical
 Source0:    %{name}-%{version}.tar.gz
 BuildRequires:  tzdata
 BuildRequires:  cmake
