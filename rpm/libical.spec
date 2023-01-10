@@ -1,6 +1,6 @@
 Name:       libical
 Summary:    iCalendar library implementation in C (runtime)
-Version:    3.0.9
+Version:    3.0.16
 Release:    1
 License:    LGPLv2 or MPLv2.0
 URL:        https://github.com/sailfishos/libical
@@ -63,7 +63,7 @@ Development files needed for building things which link against %{name}-glib.
        -DICAL_GLIB:BOOL=true \
        -DGOBJECT_INTROSPECTION:BOOL=false \
        -DLIBICAL_BUILD_TESTING:BOOL=false \
-       -DSHARED_ONLY:BOOL=true
+       -DSHARED_ONLY:BOOL=true .
 %make_build
 
 %install
