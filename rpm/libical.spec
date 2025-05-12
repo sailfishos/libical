@@ -1,6 +1,6 @@
 Name:       libical
 Summary:    iCalendar library implementation in C (runtime)
-Version:    3.0.16
+Version:    3.0.20
 Release:    1
 License:    LGPLv2 or MPLv2.0
 URL:        https://github.com/sailfishos/libical
@@ -63,11 +63,11 @@ Development files needed for building things which link against %{name}-glib.
        -DICAL_GLIB:BOOL=true \
        -DGOBJECT_INTROSPECTION:BOOL=false \
        -DLIBICAL_BUILD_TESTING:BOOL=false \
-       -DSHARED_ONLY:BOOL=true .
-%make_build
+       -DSHARED_ONLY:BOOL=true
+%cmake_build
 
 %install
-%make_install
+%cmake_install
 
 # This is just a private build tool, not meant to be installed
 rm %{buildroot}%{_libexecdir}/libical/ical-glib-src-generator
@@ -80,7 +80,6 @@ rm -rf %{buildroot}%{_datadir}/libical/zoneinfo
 %postun glib -p /sbin/ldconfig
 
 %files
-%defattr(-,root,root,-)
 %license LICENSE LICENSE.LGPL21.txt LICENSE.MPL2.txt
 %{_libdir}/libical.so.*
 %{_libdir}/libical_cxx.so.*
@@ -89,7 +88,6 @@ rm -rf %{buildroot}%{_datadir}/libical/zoneinfo
 %{_libdir}/libicalvcal.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %{_includedir}/libical/
 %{_libdir}/libical.so
 %{_libdir}/libical_cxx.so
@@ -100,11 +98,9 @@ rm -rf %{buildroot}%{_datadir}/libical/zoneinfo
 %{_libdir}/cmake/LibIcal/
 
 %files glib
-%defattr(-,root,root-)
 %{_libdir}/libical-glib.so.*
 
 %files glib-devel
-%defattr(-,root,root,-)
 %{_includedir}/libical-glib/
 %{_libdir}/libical-glib.so
 %{_libdir}/pkgconfig/libical-glib.pc
